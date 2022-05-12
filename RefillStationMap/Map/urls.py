@@ -4,6 +4,7 @@ import Map.views as views
 app_name = 'Map'
 
 urlpatterns = [
-    path('',views.store,name='store'),
+    path('save',views.store,name='save'),
+    path('',views.map,name='store'),
 
 ]

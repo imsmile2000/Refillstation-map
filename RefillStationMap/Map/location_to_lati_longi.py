@@ -52,7 +52,6 @@ def change(address):
             response_body = response.read().decode('utf-8')
             response_body = json.loads(response_body)   # json
             if response_body['addresses'] == [] :
-                print("'result' not exist!")
                 latitude = None
                 longitude = None
             else:
@@ -61,13 +60,12 @@ def change(address):
                 #위도경도 반환
                 return (latitude,longitude)
         else:
-            print('Response error code : %d' % rescode)
             latitude = None
             longitude = None
         
-add = ["서울특별시 중구 필동로1길 30(필동3가)","서울특별시 중구 필동로1길 30(필동3가)"]
-lati_longi=[]
-for i in add:
-    lati,longi=change(i)
-    print(lati,longi)
-    lati_longi.append((lati,longi))
+# add = ["서울특별시 중구 필동로1길 30(필동3가)","서울특별시 중구 필동로1길 30(필동3가)"]
+# lati_longi=[]
+# for i in add:
+#     lati,longi=change(i)
+#     print(lati,longi)
+#     lati_longi.append((lati,longi))
