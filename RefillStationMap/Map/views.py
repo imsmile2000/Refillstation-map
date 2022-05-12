@@ -31,13 +31,20 @@ def store(request):
 
 def map(request):
 
-    # store 카테고리별로 분류해서 json으로 store.html에 넘기기 => res_data 생성할 때 필터링해서 특정 데이터만 넣어
-    # 1. 사용자가 고른 값으로 필터링
-    input = "세제" #카테고리가 세제인경우.
-    stores = Store.objects.filter(category=input)
-    print(stores)
-    stores_js = serializers.serialize("json", stores)
-    print(stores_js)
+    if request.method == "POST":
+
+        keyword = request.POST['keyword']
+        # store 카테고리별로 분류해서 json으로 store.html에 넘기기 => res_data 생성할 때 필터링해서 특정 데이터만 넣어
+        # 1. 사용자가 고른 값으로 필터링
+        input = keyword #카테고리가 세제인경우.
+        stores = Store.objects.filter(category=input)
+        print(stores)
+        stores_js = serializers.serialize("json", stores)
+        print(stores_js)
 
 
-    return render(request,'store.html',{'res_data' : stores_js})
+        return render(request,'store.html',{'res_data' : stores_js})
+    else:
+        stores = Store.objects.all()
+        stores_js = serializers.serialize("json", stores)
+        return render(request,'store.html',{'res_data' : stores_js})
