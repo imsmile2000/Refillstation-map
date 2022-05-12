@@ -1,9 +1,9 @@
 from django.urls import path,include
 import Map.views as views
 
-app_name = 'Home'
+app_name = 'Map'
 
 urlpatterns = [
-    path('',views.map,name='map'),
+    path('',views.store,name='store'),
 
 ]
