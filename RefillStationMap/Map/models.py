@@ -1,3 +1,4 @@
+from tkinter import CASCADE
 from unicodedata import category
 from django.db import models
 
@@ -8,5 +9,4 @@ class Store(models.Model):
     longitude = models.FloatField()
     latitude = models.FloatField()
     category = models.CharField(max_length=30)
-
-
+    sub_category = models.TextField()
