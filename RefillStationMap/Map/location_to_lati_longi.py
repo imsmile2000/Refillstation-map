@@ -33,7 +33,6 @@ api_url = 'https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query='
 
 def change(address):
     # 네이버 지도 API 이용해서 위경도 찾기
-    print(address)
     add_urlenc = parse.quote(address)  
     url = api_url + add_urlenc
     request = Request(url)
