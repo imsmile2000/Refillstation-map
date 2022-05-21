@@ -58,17 +58,20 @@
                                 <br>
                                 <div class="form-group col-md-6" style="text-align: center; margin-top: 10%; margin-left: 25%;">
                                     <label class="form-check-label" for="filterRadio">
-                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="화장품" checked> 화장품
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="화장품"> 화장품
                                     </label>
                                     <label class="form-check-label" for="filterRadio">
-                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="케어제품" checked> 케어제품
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="케어제품"> 케어제품
                                     </label>                   
                                     <label class="form-check-label" for="filterRadio">
-                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="세탁용품" checked> 세탁용품
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="세탁용품"> 세탁용품
                                     </label>
                                     <label class="form-check-label" for="filterRadio">
-                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="식품" checked> 식품
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="식품"> 식품
                                     </label>
+                                    <label class="form-check-label" for="filterRadio">
+                                        <input style="display: none;" class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="null" checked>
+                                    </label> <!-- 위의 4개의 checkbox를 선택하지 않았을때 veiws.py에서 오류방지용 radiobox-->
                                 </div>
                                 <div style="text-align: center; margin-top: 10%;" class = "text-center"><input class="btn btn-outline-success" type = "submit" value ="search"></div>
                             </div>
