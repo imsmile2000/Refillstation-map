@@ -58,13 +58,16 @@
                                 <br>
                                 <div class="form-group col-md-6" style="text-align: center; margin-top: 10%; margin-left: 25%;">
                                     <label class="form-check-label" for="filterRadio">
-                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="생활용품" checked> 생활용품
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="화장품" checked> 화장품
+                                    </label>
+                                    <label class="form-check-label" for="filterRadio">
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="케어제품" checked> 케어제품
+                                    </label>                   
+                                    <label class="form-check-label" for="filterRadio">
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="세탁용품" checked> 세탁용품
                                     </label>
                                     <label class="form-check-label" for="filterRadio">
                                         <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="식품" checked> 식품
-                                    </label>                   
-                                    <label class="form-check-label" for="filterRadio">
-                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="화장품" checked> 화장품
                                     </label>
                                 </div>
                                 <div style="text-align: center; margin-top: 10%;" class = "text-center"><input class="btn btn-outline-success" type = "submit" value ="search"></div>
@@ -91,14 +94,14 @@
             const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
             const options = { //지도를 생성할 때 필요한 기본 옵션
                 center: new kakao.maps.LatLng(37.5578333, 126.9051334), //지도의 중심좌표 => 사용자의 위치로 설정예정.
-                level: 7 //지도의 레벨(확대, 축소 정도)
+                level: 100 //지도의 레벨(확대, 축소 정도)
             };
             const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
             // 마커가 표시될 위치입니다 
                         
             // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열예시
             const data = JSON.parse("{{ res_data|escapejs }}");
-
+            console.log(data);
             const position = []
             let p=0;
             for(p; p<data.length; p++)
