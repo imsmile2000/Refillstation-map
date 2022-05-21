@@ -23,6 +23,7 @@
                 <span class="site-heading-lower">RefillStation Map</span>
             </h1>
         </header>
+        
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
@@ -33,87 +34,51 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Home:main' %}">Home</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Home:about' %}">About</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Home:products' %}">Products</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Home:store' %}">Store</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Map:store' %}">Store</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <section class="page-section cta">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-9 mx-auto">
-                        <div class="cta-inner bg-faded text-center rounded">
-                            <h2 class="section-heading mb-5">
-                                <span class="section-heading-upper">Come On In</span>
-                                <span class="section-heading-lower">We're Open</span>
-                            </h2>
-                            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    Sunday
-                                    <span class="ms-auto">Closed</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    Monday
-                                    <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    Tuesday
-                                    <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    Wednesday
-                                    <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    Thursday
-                                    <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    Friday
-                                    <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
-                                    Saturday
-                                    <span class="ms-auto">9:00 AM to 5:00 PM</span>
-                                </li>
-                            </ul>
-                            <p class="address mb-5">
-                                <em>
-                                    <strong>1116 Orchard Street</strong>
-                                    <br />
-                                    Golden Valley, Minnesota
-                                </em>
-                            </p>
-                            <p class="mb-0">
-                                <small><em>Call Anytime</em></small>
-                                <br />
-                                (317) 585-8468
-                            </p>
-                        </div>
-                    </div>
+            <div class="map_wrap" style="overflow:hidden;height:330px">
+                <div id="mapWrapper" style="width:50%;height:300px;float:left">
+                    <div id="map" style="width:100%;height:100%; margin-left: 5%;"></div> <!-- 지도를 표시할 div 입니다 -->
                 </div>
-            </div>
-        </section>
-        <section class="page-section about-heading">
-            <div class="container">
-                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src='{% static "assets/img/about.jpg" %}' alt="..." />
-                <div class="about-heading-content">
-                    <div class="row">
-                        <div class="col-xl-9 col-lg-10 mx-auto">
-                            <div class="bg-faded rounded p-5">
-                                <h2 class="section-heading mb-4">
-                                    <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                                    <span class="section-heading-lower">About Our Cafe</span>
-                                </h2>
-                                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                                <p class="mb-0">
-                                    We guarantee that you will fall in
-                                    <em>lust</em>
-                                    with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.
-                                </p>
+                <div id="rvWrapper" style="width:50%;height:300px;float:left">
+                    <div id="filter" style="width:100%;height:100%;">
+                        <p style="text-align: center;">RefillStation filter</p>
+                        <br>
+                        <form name = "filter_form" style = "display: block;" action="{% url 'Map:store' %}" method = "POST" >
+                            {% csrf_token %}
+                            <div class="form-group col-md-6" style="text-align: center; margin-left: 25%;">
+                                <input class="form-control" type = "filter" name = "keyword" size="10" >
+                                <small id="filterinline" class="text-muted">
+                                    원하는 상품 목록을 검색하세요.
+                                </small>
+                                <br>
+                                <div class="form-group col-md-6" style="text-align: center; margin-top: 10%; margin-left: 25%;">
+                                    <label class="form-check-label" for="filterRadio">
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="화장품"> 화장품
+                                    </label>
+                                    <label class="form-check-label" for="filterRadio">
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="케어제품"> 케어제품
+                                    </label>                   
+                                    <label class="form-check-label" for="filterRadio">
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="세탁용품"> 세탁용품
+                                    </label>
+                                    <label class="form-check-label" for="filterRadio">
+                                        <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="식품"> 식품
+                                    </label>
+                                    <label class="form-check-label" for="filterRadio">
+                                        <input style="display: none;" class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="null" checked>
+                                    </label> <!-- 위의 4개의 checkbox를 선택하지 않았을때 veiws.py에서 오류방지용 radiobox-->
+                                </div>
+                                <div style="text-align: center; margin-top: 10%;" class = "text-center"><input class="btn btn-outline-success" type = "submit" value ="search"></div>
                             </div>
+                            <br>
                         </div>
-                    </div>
+                        </form>
+                    </div> 
                 </div>
             </div>
         </section>
@@ -123,6 +88,80 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src='{% static "js/scripts.js" %};></script>
+        <script src='{% static "js/scripts.js" %}'></script>
+        <!--kakao map api-->
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=11bec4d0852d76486fe4d9f922a1abd2&libraries=services,clusterer,drawing"></script>
+        <!--map-->
+        <script>
+            
+            const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+            const options = { //지도를 생성할 때 필요한 기본 옵션
+                center: new kakao.maps.LatLng(37.5578333, 126.9051334), //지도의 중심좌표 => 사용자의 위치로 설정예정.
+                level: 100 //지도의 레벨(확대, 축소 정도)
+            };
+            const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+            // 마커가 표시될 위치입니다 
+                        
+            // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열예시
+            const data = JSON.parse("{{ res_data|escapejs }}");
+            console.log(data);
+            const position = []
+            let p=0;
+            for(p; p<data.length; p++)
+            {
+                const new_p = {
+                content: `<div>${data[p]['fields'].name}</div>`,
+                latlng: new kakao.maps.LatLng(data[p]['fields'].latitude,data[p]['fields'].longitude),
+                site: data[p]['fields'].site}
+                position.push(new_p)
+            }
+
+
+            //position django backend에서 json으로 리필스테이션 위도, 경도, 소개사이트 혹은 웹사이트, content를 넘겨받아서 위와같이 처리하는 코드를 작성(예정)
+
+            let i=0;
+            for (i; i < position.length; i ++) {
+                // 마커를 생성합니다
+                const marker = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    position: position[i].latlng // 마커의 위치
+                });
+
+                // 마커에 표시할 인포윈도우를 생성합니다 
+                const infowindow = new kakao.maps.InfoWindow({
+                    content: position[i].content // 인포윈도우에 표시할 내용
+                });
+
+                // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+                kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+                //마커 클릭시 링크를 타고 넘어가도록 onclick 이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'click', onClickListener(position[i].site));
+            }
+
+            // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+            function makeOverListener(map, marker, infowindow) {
+                return function() {
+                    infowindow.open(map, marker);
+                };
+            }
+
+            // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+            function makeOutListener(infowindow) {
+                return function() {
+                    infowindow.close();
+                };
+            }
+
+            //onclick listener
+            function onClickListener(link) {
+                return function() {
+                    // 등록한 웹페이지 혹은 블로그 주소를 링크로 넣습니다
+                    window.open(link);
+                };
+            }
+
+
+        </script>
     </body>
 </html>
