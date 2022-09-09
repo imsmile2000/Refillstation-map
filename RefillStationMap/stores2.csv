@@ -1,0 +1,43 @@
+유형,상점명,주소,길찾기,대분류,lati,longi
+체인점,이니스프리 강남직영점,서울 서초구 강남대로 423 한승빌딩 1층 이니스프리,"https://map.naver.com/v5/entry/place/21718489?c=14140487.0367428,4509070.2885077,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt","화장품,케어제품",37.5002585,127.0258452
+체인점,이니스프리 건대점,서울 광진구 능동로 103 동서빌딩 1층 1-2호 이니스프리,"https://map.naver.com/v5/entry/place/1190327311?c=14145424.212006714,4514689.066512749,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt","화장품,케어제품",37.5403396,127.0705131
+체인점,이니스프리 이마트 자양점,서울특별시 광진구 아차산로 272 이마트자양점,http://naver.me/FPs967Yp,"화장품,케어제품",37.5385583,127.0729962
+체인점,아모레스토어 일광점,부산 기장군 일광면 해빛로 41 ,"https://map.naver.com/v5/entry/place/1871115728?c=14385098.8048876,4200232.4302828,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt","화장품,케어제품",35.2670557,129.2235412
+체인점,아모레스토어 수원광교점,경기 수원시 영통구 광교호수공원로 80,http://naver.me/5sETIyx6,"화장품,케어제품",37.2739774,127.0612197
+체인점,아모레퍼시픽 헤어앤바디,서울 광진구 아차산로 272 이마트자양점,http://naver.me/GFpefzw2,"화장품,케어제품",37.5385583,127.0729962
+체인점,이마트 성수점 에코리필 스테이션,서울 성동구 뚝섬로 379 이마트성수점,https://map.naver.com/v5/search/%EC%9D%B4%EB%A7%88%ED%8A%B8%EC%84%B1%EC%88%98%EC%A0%90/place/11605053?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&placeSearchOption=entry=pll%26fromNxList=true,세탁용품,37.5399360,127.0534928
+체인점,이마트트레이더스 안성점 에코리필 스테이션,경기 안성시 공도읍 서동대로 3930-39,https://map.naver.com/v5/search/%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%8D%94%EC%8A%A4%20%EC%95%88%EC%84%B1%EC%A0%90/place/1742881125?placePath=%3Fentry=pll%26from=nx%26fromNxList=true,세탁용품,36.9946334,127.1472496
+체인점,알맹상점 리스테이션,서울특별시 마포구 월드컵로25길 47,http://naver.me/51Q10cRi,"세탁용품,케어제품,식품",37.5578333,126.9051334
+체인점,알맹상점 리스테이션,서울특별시 중구 한강대로 405,http://naver.me/FjxZ8i2k,"세탁용품,케어제품,식품",37.5552782,126.9706760
+체인점,더바디샵 강남대로점,서울 서초구 강남대로 449,"https://map.naver.com/v5/entry/place/1732895246?c=14140369.8061870,4509376.2232257,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",케어제품,37.5024181,127.0250752
+체인점,더바디샵 더현대 서울,서울 영등포구 여의대로 108 더현대 서울,"https://map.naver.com/v5/search/%ED%98%84%EB%8C%80%EB%B0%B1%ED%99%94%EC%A0%90%20%EB%8D%94%ED%98%84%EB%8C%80%20%EC%84%9C%EC%9A%B8/place/1386302181?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&c=14129141.1316021,4512680.3346242,15,0,0,0,dh",케어제품,37.5266691,126.9271941
+체인점,더바디샵 현대신촌점,서울특별시 서대문구 신촌로 83 현대백화점 신촌점,"https://map.naver.com/v5/entry/place/12987759?c=14130432.0592091,4516903.8701478,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",케어제품,37.5560846,126.9358309
+체인점,더바디샵 현대백화점 천호점,서울특별시 강동구 천호대로 1005 현대백화점,"https://map.naver.com/v5/entry/place/1527953135?c=14151430.065514248,4514486.5264166,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",케어제품,37.5389906,127.1244167
+체인점,더바디샵 신세계센텀시티점,부산광역시 해운대구 센텀4로 15 ,"https://map.naver.com/v5/entry/place/13377302?c=14374494.2652917,4186992.9184383,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",케어제품,35.1698401,129.1283011
+체인점,덕분애 제로웨이스트샵,서울특별시 서초구 서운로26길 11,"https://map.naver.com/v5/directions/-/14140139.642007831,4509405.620257858,%EB%8D%95%EB%B6%84%EC%95%A0%20%EC%A0%9C%EB%A1%9C%EC%9B%A8%EC%9D%B4%EC%8A%A4%ED%8A%B8%EC%83%B5,1992177367,PLACE_POI/-/car?c=14126851.4455238,4517932.3196636,15,0,0,0,dh","세탁용품,식품",37.5026670,127.0230356
+체인점,아로마티카 제로스테이션 신사,서울 강남구 도산대로1길 62,http://naver.me/GWFDNbbq,"케어제품,화장품",37.5207355,127.0194286
+체인점,아로마티카 제로스테이션 스타필드 하남점,경기 하남시 미사대로 750 스타필드 하남,http://naver.me/Ixbz23yi,"케어제품,화장품",37.5454628,127.2238404
+개인,리필: 더 채움샵 업사이클아트센터점,경기도 광명시 가학동 27,https://blog.naver.com/gmupcycle/222721592374,세탁용품,37.4250529,126.8637654
+개인,보틀라운지,서울 서대문구 홍연길 26,http://naver.me/GHETHiwP,세탁용품,37.5751847,126.9284938
+개인,엘지생활건강 빌려쓰는 지구 죽전 (이마트 죽전),경기 용인시 수지구 포은대로 552 이마트죽전점,http://naver.me/xNdmQY5a,케어제품,37.3253071,127.1098259
+체인점,천연제작소 부산점,부산광역시 북구 덕천1길 93,http://naver.me/FMAz5fFU,"세탁용품,케어제품",35.2108461,129.0105400
+체인점,천연제작소 양산점,경상남도 양산시 물금읍 백호2길 28-6,http://naver.me/xmiZly9T,"세탁용품,케어제품",35.3191269,128.9972113
+개인,채움소,인천 중구 하늘달빛로 78 ,http://naver.me/5GyaurDo,"세탁용품,식품",37.4863681,126.5587765
+체인점,에코스토어 신세계백화점본점 식품관,서울특별시 중구 소공로 63,"https://map.naver.com/v5/entry/place/1401231477?c=14135472.360849295,4517578.795854986,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt","세탁용품,케어제품",37.5608909,126.9811087
+개인,송정마을카페이공,광주광역시 광산구 송도로 257-1,"https://map.naver.com/v5/entry/place/33740595?c=14115111.447121847,4182460.340231158,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",세탁용품,35.1365598,126.7982313
+개인,낯설여관 204호,경기도 수원시 장안구 영화로71번길 33 ,"https://map.naver.com/v5/entry/place/1864407143?c=14138144.462774348,4479899.674077675,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt","세탁용품,식품",37.2920952,127.0051126
+개인,지구별수호대 제로웨이스트상점,인천광역시 서구 청라에메랄드로 99,https://map.naver.com/v5/search/%EC%A7%80%EA%B5%AC%EC%88%98%ED%98%B8%EB%8C%80/place/1378440122?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&placeSearchOption=entry=pll%26fromNxList=true,"세탁용품,케어제품",37.5336073,126.6557308
+개인,제로에이블,경기 안양시 동안구 동편로27번길 7,"https://map.naver.com/v5/entry/place/1717078315?c=14126851.4455238,4517932.3196636,15,0,0,0,dh","세탁용품,식품",37.4066973,126.9721338
+개인,더벨루,경상북도 포항시 남구 오천읍 냉천로308번길 20,"https://map.naver.com/v5/entry/place/1426505359?c=14405545.234247845,4296137.2904489115,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",세탁용품,35.9674296,129.4070885
+개인,지구샵 제로웨이스트홈,서울특별시 마포구 성미산로 155,https://map.naver.com/v5/search/%EC%A7%80%EA%B5%AC%EC%83%B5/place/1106156821?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&placeSearchOption=entry=pll%26fromNxList=true,"세탁용품,케어제품",37.5645892,126.9235294
+개인,켈로그 에코 리필 스테이션 잠실 롯데마트 제타플렉스점,서울특별시 송파구 올림픽로 240,https://map.naver.com/v5/search/%EC%9E%A0%EC%8B%A4%20%EB%A1%AF%EB%8D%B0%EB%A7%88%ED%8A%B8%20%EC%A0%9C%ED%83%80%20%ED%94%8C%EB%A0%89%EC%8A%A4%EC%A0%90/place/11583068?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&placeSearchOption=entry=pll%26fromNxList=true,식품,37.5110794,127.0981638
+개인,1.5도씨,서울특별시 관악구 조원로18길 15,"https://map.naver.com/v5/entry/place/1962810174?c=14127851.49530128,4506728.8079178445,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt","세탁용품,케어제품,식품",37.4835881,126.9126493
+개인,도돌이상점,경기도 시흥시 은행동 601-302,"https://map.naver.com/v5/entry/place/1335603093?c=14115539.682070982,4501377.373199066,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",세탁용품,37.4459906,126.8017804
+개인,바람가게,경기도 부천시 역곡동 108-10,https://map.naver.com/v5/search/%EB%B0%94%EB%9E%8C%EA%B0%80%EA%B2%8C/place/1496052397?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&placeSearchOption=entry=pll%26fromNxList=true,세탁용품,37.4886089,126.8126857
+개인,지구랑 가게,서울특별시 노원구 월계동 391-1,https://map.naver.com/v5/search/%EC%A7%80%EA%B5%AC%EB%9E%91%EA%B0%80%EA%B2%8C/place/1552262277?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&placeSearchOption=entry=pll%26fromNxList=true,세탁용품,37.6223994,127.0592982
+개인,초록별상점,경상북도 구미시 인동가산로 337-7,"https://map.naver.com/v5/entry/place/1128501126?c=14298436.714888405,4313477.439087937,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",세탁용품,36.0933804,128.4450408
+개인,그로잉 카페,서울특별시 마포구 동교로19길 21,https://map.naver.com/v5/search/%EA%B7%B8%EB%A1%9C%EC%9E%89/place/1093405207?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&placeSearchOption=entry=pll%26fromNxList=true,"세탁용품,케어제품",37.5562643,126.9174367
+개인,동그라미리필러리,경기도 성남시 분당구 운중동 1032,"https://map.naver.com/v5/entry/place/1166838979?c=14146971.66424824,4493652.994182244,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",세탁용품,37.3903102,127.0843112
+개인,싱글룸,충청북도 청주시 상당구 중고개로141번길 14-2,https://map.naver.com/v5/search/%EC%8B%B1%EA%B8%80%EB%A3%B8/place/1196499446?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&placeSearchOption=entry=pll%26fromNxList=true,"세탁용품,식품,케어제품",36.6175039,127.5164225
+개인,심플리파이심플리파이,부산광역시 수영구 남천동로16번길 5,"https://map.naver.com/v5/entry/place/1862592772?c=14372487.453171458,4183243.786682641,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt","세탁용품,식품,화장품",35.1422998,129.1102723
+체인점,gs25 건국점 리필 스테이션 ,서울특별시 광진구 광나루로24길 14,"https://map.naver.com/v5/entry/place/37796714?c=14146071.356734496,4515439.398917498,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt",세탁용품,37.5456496,127.0762481
