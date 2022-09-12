@@ -846,7 +846,11 @@ button:hover, button:active, button:focus {
 }
 
 .footer-logo {
+<<<<<<< HEAD
   height: 40px;
+=======
+  height: 16px;
+>>>>>>> 8258be236a64babd257eb4de277d4ffaafddfce9
 }
 
 .footer-link {
