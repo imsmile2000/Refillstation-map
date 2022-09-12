@@ -10,3 +10,5 @@ class Store(models.Model):
     latitude = models.FloatField()
     category = models.TextField() #카테고리도 여러종류일 수 있음
     sub_category = models.TextField()
+
+

@@ -1,5 +1,6 @@
 from Item.models import Item
 import pandas as pd
+import re
 
 def item_save():
 
@@ -7,6 +8,9 @@ def item_save():
 
     item = Item
     for i in range(0,len(df)):
+        price_temp =  df['price'][i]
+        price = re.sub(",","",price_temp)
+        
 
-        item(image = df['image'][i], price = df['price'][i], name=df['name'][i],detail = df['detail'][i]).save()
+        item(image = df['image'][i], price = price, name=df['name'][i],detail = df['detail'][i]).save()
 
