@@ -53,100 +53,19 @@
         <h3>Our Products</h3>
 
         <div class="product-list">
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>
-            </a>
 
-            
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>
-            </a>
+            {% for data in result_board %}
+                <a href="{{data.detail}}" class="product">
+                    <img src="{{data.image}}" width="225">
+                    <div class="product-name">
+                        {{data.name}}
+                    </div>
+                    <div class="product-price">
+                        {{data.price}}
+                    </div>
+                </a>
+            {% endfor %}
 
-            
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>
-            </a>
-
-            
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>
-            </a>
-
-            
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>
-            </a>
-
-            
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>
-            </a>
-
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>
-            </a>
-            
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>
-            </a>
-            
-            <a href="#" class="product">
-                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                <div class="product-name">
-                    Sunglasses
-                </div>
-                <div class="product-price">
-                    49,000
-                </div>          
-            </a>
             <div class="clearfix"></div>
         </div>
 

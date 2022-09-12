@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="col-sm" style="text-align: center; ">
+    <table class = "table table-hover text-center" >
+      <thead class="thead-dark">
+          <tr>
+              <td>상품명</td>
+              <td>가격</td>
+              <td>이미지</td>
+              <td>더보기</td>
+          </tr>
+      </thead>
+      <tbody>
+          {% for data in result_board%}
+          <tr>            
+              <td>{{data.name}}</td>
+              <td>{{data.price}}</td>
+              <td><img src="{{data.image}}"></td>
+              <td><a href="{{data.detail}}">{{data.detail}}</a></td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
