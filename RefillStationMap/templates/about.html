@@ -37,32 +37,341 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-        <section class="page-section about-heading">
-            <div class="container">
-                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src='{% static "assets/img/amore.jpeg" %}' alt="..." />
-                <div class="about-heading-content">
-                    <div class="row">
-                        <div class="col-xl-9 col-lg-10 mx-auto">
-                            <div class="bg-faded rounded p-5">
-                                <h2 class="section-heading mb-4">
-                                    <span class="section-heading-upper">자연을 생각하는 우리 모두를 위한,</span>
-                                    <span class="section-heading-lower">리필스테이션 맵</span>
-                                </h2>
-                                <p>리필스테이션이란, 이미용품(샴푸,린스,바디워시 등), 세탁용품 등을 포장 용기 없이 내용물만 판매하는 곳을 말합니다. </p>
-                                <p class="mb-0">
-                                    우리는 RefillStation Map은 리필스테이션이 있는 곳을 지도로 만들어나갑니다.
-                                    리필스테이션에 대한 사람들에 대한 관심을 키우며 편리하게 이용할 수 있도록 그렇게 ESG경영을 도와갑니다.
-                                </p>
-                            </div>
-                        </div>
+            <div style="width:80px; height:40px; float: left; margin-top: 15px;" class="name">이윤표님</div>
+          </div>    
+          <div class="modify">i</div>    
+        </div>
+        <div class="summaryContainer">
+          <div class="item">
+              <div class="number">51</div>
+              <div>단골상점</div>
+            </div>
+            <div class="item">
+              <div class="number">34</div>
+              <div>상품후기</div>
+            </div>
+            <div class="item">
+              <div class="number">1000P</div>
+              <div>적립금</div>
+            </div>
+        </div>  
+        <div class="shippingStatusContainer">
+          <div class="title">
+            주문/배송조회
+          </div>
+          <div class="status">
+            
+            <div class="item">
+              <div>
+                <div class="green number">6</div>
+                <div class="text">장바구니</div>
+              </div>
+              <div class="icon"> > </div>
+            </div>     
+            <div class="item">
+              <div>
+                <div class="number">0</div>
+                <div class="text">결제완료</div>
+              </div>
+              <div class="icon"> > </div>
+            </div>     
+            <div class="item">
+              <div>
+                <div class="green number">1</div>
+                <div class="text">배송중</div>
+              </div>
+              <div class="icon"> > </div>
+            </div>     
+            <div class="item">
+              <div>
+                <div class="green number">3</div>
+                <div class="text">구매확정</div>
+              </div>
+            </div>     
+            
+          </div>
+          
+        </div>  
+        <div class="listContainer">
+          <a href="#" class="item">
+              <div class="icon">ii</div>
+              <div class="text">주문목록<span class="circle"></span></div>
+              <div class="right"> > </div>
+          </a>
+          <a href="#" class="item">
+              <div class="icon">ii</div>
+              <div class="text">상품후기</div>
+              <div class="right"> > </div>
+          </a>
+          <a href="#" class="item">
+              <div class="icon">ii</div>
+              <div class="text">상품문의</div>
+              <div class="right"> > </div>
+          </a>
+          <a href="#" class="item">
+              <div class="icon">ii</div>
+              <div class="text">단골상점</div>
+              <div class="right"> > </div>
+          </a>
+          <a href="{% url 'Home:products' %}" class="item">
+            <div class="icon">ii</div>
+            <div class="text">포인트로 구매하러 가기</div>
+            <div class="right"> > </div>
+          </a>
+        </div>
+        <div class="listContainer">
+          <a href="#" class="item">
+              <div class="icon">ii</div>
+              <div class="text">
+                <span>내지갑</span>
+                <span class="smallLight">
+                  <span>|</span>
+                  <span>보유 적립금</span>
+                </span>          
+              </div>                
+              <div class="right">
+                <span class="blct">1000P</span>
+                > </div>
+          </a>
+          <a href="#" class="item">
+              <div class="icon">ii</div>
+              <div class="text">알림</div>
+              <div class="right"> > </div>
+          </a>
+          <a href="#" class="item">
+              <div class="icon">ii</div>
+              <div class="text">설정</div>
+              <div class="right"> > </div>
+          </a>   
+        </div>
+        <div class="infoContainer">
+          <a href="#" class="item">
+            <div>icon</div>
+            <div>공지사항</div>
+          </a>    
+          <a href="#" class="item">
+            <div>icos</div>
+            <div>이용안내</div>
+          </a>    
+          <a href="#" class="item">
+            <div>icon</div>
+            <div>고객센터</div>
+          </a>
+        </div>
+      </div>
+        <!-- app footer -->
+        <div class="appFooter">
+            <img src='{% static "img/logo1.png" %}' alt="icon" class="footer-logo">
+            <div class="footer-title">
+                Copyright © RefillStation <span class="yearNow"></span>. All Rights Reserved.
+            </div>
+            <div>Mobilekit is PWA ready Mobile UI Kit Template.</div>
+            Great way to start your mobile websites and pwa projects.
+
+            <div class="mt-2">
+                <a href="#" class="btn btn-icon btn-sm btn-facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-twitter">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-linkedin">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-instagram">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-whatsapp">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-secondary goTop">
+                    <ion-icon name="arrow-up-outline"></ion-icon>
+                </a>
+            </div>
+
+        </div>
+        <!-- * app footer -->
+    </div>
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="{% url 'Home:main' %}" class="item active">
+            <div class="col">
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="{% url 'Map:store' %}" class="item">
+            <div class="col">
+                <ion-icon name="map-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="{% url 'Home:about' %}" class="item">
+            <div class="col">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+                <span class="badge badge-danger">5</span>
+            </div>
+        </a>
+        <a href="{% url 'Home:products' %}" class="item">
+            <div class="col">
+                <ion-icon name="leaf-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="{% url 'Home:about' %}" class="item">
+            <div class="col">
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+    <!-- App Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarPanel">
+        <div class="offcanvas-body">
+            <!-- profile box -->
+            <div class="profileBox">
+                <div class="image-wrapper">
+                    <img src='{% static "img/sample/avatar/avatar1.jpg" %}' alt="image" class="imaged rounded">
+                </div>
+                <div class="in">
+                    <strong>이윤표님</strong>
+                    <div class="text-muted">
+                        <ion-icon name="location"></ion-icon>
+                        대한민국
                     </div>
                 </div>
+                <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">
+                    <ion-icon name="close"></ion-icon>
+                </a>
             </div>
-        </section>
-        <footer class="footer text-faded text-center py-5">
-            <div class="container"><p class="m-0 small">Copyright &copy; RefillStation Map</p></div>
-        </footer>
+            <!-- * profile box -->
+
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="{% url 'Home:main' %}" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            메인페이지
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Map:store' %}" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="map-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            주변 리필스테이션 찾기
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Home:products' %}" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="leaf-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Shop</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Home:about' %}" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="chatbubbles-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>커뮤니티</div>
+                            <span class="badge badge-danger">5</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Home:about' %}" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>마이페이지</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="listview-title mt-2 mb-1">
+                <span>단골상점</span>
+            </div>
+            <ul class="listview image-listview flush transparent no-line">
+                <li>
+                    <a href="{% url 'Home:products' %}" class="item">
+                        <img src='{% static "img/sample/avatar/avatar.jpg" %}' alt="image" class="image">
+                        <div class="in">
+                            <div>지구랑 가게</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Home:products' %}" class="item">
+                        <img src='{% static "img/sample/avatar/avatar.jpg" %}' alt="image" class="image">
+                        <div class="in">
+                            <div>더벨루</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Home:products' %}" class="item">
+                        <img src='{% static "img/sample/avatar/avatar.jpg" %}' alt="image" class="image">
+                        <div class="in">
+                            <div>동그라미리필러리</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Home:products' %}" class="item">
+                        <img src='{% static "img/sample/avatar/avatar.jpg" %}' alt="image" class="image">
+                        <div class="in">
+                            <div>보틀라운지</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Home:products' %}" class="item">
+                        <img src='{% static "img/sample/avatar/avatar.jpg" %}' alt="image" class="image">
+                        <div class="in">
+                            <div>천연제작소 부산점</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar buttons -->
+        <div class="sidebar-buttons">
+            <a href="#" class="button">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="archive-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="settings-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- * sidebar buttons -->
+    </div>
+    <!-- * App Sidebar -->
+        <!-- ============== Js Files ==============  -->
+        <!-- Bootstrap -->
+        <script src='{% static "js/lib/bootstrap.min.js" %}'></script>
+        <!-- Ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- Splide -->
+        <script src='{% static "js/plugins/splide/splide.min.js" %}'></script>
+        <!-- ProgressBar js -->
+        <script src='{% static "js/plugins/progressbar-js/progressbar.min.js" %}'></script>
+        <!-- Base Js File -->
+        <script src='{% static "js/base.js" %}'></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
