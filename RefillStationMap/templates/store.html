@@ -7,23 +7,33 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>RefillStation Map</title>
-        <link rel="icon" type="image/x-icon" href='{% static "assets/favicon.ico" %}' />
+        <link rel="stylesheet" href='{% static "css/style.css" %}'>
+        <link rel="icon" type="image/x-icon" href='{% static "img/favicon.png" %}' />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href='{% static "css/styles.css" %}' rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />>
     </head>
     <body>
-        <header>
-            <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">RefillStation Map</span>
-                <span class="site-heading-lower">RefillStation Map</span>
-            </h1>
-        </header>
-        
+    <!-- App Header -->
+    <div class="appHeader bg-primary scrolled">
+        <div class="left">
+            <a href="#" class="headerButton" data-bs-toggle="offcanvas" data-bs-target="#sidebarPanel">
+                <ion-icon name="menu-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            RefillStation
+        </div>
+        <div class="right">
+            <a href="#" class="headerButton toggle-searchbox">
+                <ion-icon name="search-outline"></ion-icon>
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
@@ -56,7 +66,6 @@
                                 </small>
                                 <br>
                                 <div class="form-group col-md-6" style="text-align: center; margin-top: 3%;">
-
                                     <label class="form-check-label" for="filterRadio">
                                         <input class="form-check-input" type="radio" name="radiocheck" id="radiocheck" value="화장품"> 화장품
                                     </label>
@@ -74,7 +83,6 @@
                                     </label>
                                 </div>
                                 <div style="text-align: center; margin-top: 3%;" class = "text-center"><input class="btn btn-outline-success" type = "submit" value ="search"></div>
-
                             </div>
                             <br>
                         </div>
@@ -318,7 +326,7 @@
                 };
                 const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
                 // 마커가 표시될 위치입니다 
-                            
+
                 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열예시
                 const data = JSON.parse("{{ res_data|escapejs }}");
                 console.log(data);
@@ -384,10 +392,11 @@
                 console.log(position.coords.latitude);
                 console.log(position.coords.longitude);
                 show_map(position.coords.latitude,position.coords.longitude);
-                
+
             }
             const error=()=>{
                 alert("i can't find you.")}
+
             navigator.geolocation.getCurrentPosition(okay,error);           
         </script>
     </body>
