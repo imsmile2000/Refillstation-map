@@ -5,6 +5,6 @@ app_name = 'Item'
 
 urlpatterns = [
     path('save',views.save,name='save'),
-    path('',views.item,name='item'),
+    path('',views.item,name='store'),
 
 ]

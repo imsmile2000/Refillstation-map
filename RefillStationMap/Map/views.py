@@ -21,20 +21,29 @@ def map(request):
 
         keyword = request.POST['keyword']
         check = request.POST['radiocheck']
-        print(check)
+        print(keyword,check)
 
         res_data=[]
         res_data2=[]
         stores = Store.objects.all()
 
         # 1. 사용자가 check한 카테고리를 필터링. => 식품 화장품 생활용품중 하나
-        if not check=="null":
+        if not check=="null" and keyword=="":
             for store in stores:
                 category = json.loads(store.category)
                 if check in category:
                     if store in stores:
                         res_data.append(store)
-        elif keyword:
+        elif keyword and (check=="null"):
+            filter_stores = Store.objects.filter(name__contains = keyword)
+            for store in filter_stores:
+                res_data2.append(store)
+        elif keyword and (not check=="null"):
+            for store in stores:
+                category = json.loads(store.category)
+                if check in category:
+                    if store in stores:
+                        res_data.append(store)
             filter_stores = Store.objects.filter(name__contains = keyword)
             for store in filter_stores:
                 res_data2.append(store)
@@ -46,7 +55,9 @@ def map(request):
 
         res_data3=[]
 
-        if res_data and res_data2:
+        print(res_data)
+        print(res_data2)
+        if keyword and check:
 
             for i in res_data:
                 for j in res_data2:

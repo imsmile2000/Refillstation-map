@@ -16,6 +16,20 @@ def item(request):
     items = Item.objects.all()
 
     page = int(request.GET.get("p", 1))
-    pagenator = Paginator(items, 10)
+    pagenator = Paginator(items, 6)
     res_data["result_board"] = pagenator.get_page(page)
+
+    name_board=[]
+    for i in items:
+        # print(len(i.name))
+        if len(i.name)>50:
+            temp = i.name[:51]+"..."
+            print(temp)
+            name_board.append(temp)
+        else:
+            name_board.append(i.name)
+
+    res_data['name_board'] = name_board
+
+
     return render(request,'item/products.html',res_data)
