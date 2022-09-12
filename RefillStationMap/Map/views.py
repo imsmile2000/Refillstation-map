@@ -3,43 +3,15 @@ from django.shortcuts import render
 from Map.models import Store
 from Map.location_to_lati_longi import change
 from Map.store_save import stores as st
+from Map.store_save import save_stores as savestore
 from django.core import serializers
 import json
 
 # Create your views here.
 def store(request):
 
-    # # store 카테고리별로 분류해서 json으로 store.html에 넘기기 => res_data 생성할 때 필터링해서 특정 데이터만 넣어
-    # store_del = Store.objects.all()
-    # print("delete ==================>",store_del)
-    # store_del.delete()
-    # print(Store.objects.all())
-
-    stores = st()
+    stores = savestore()
     print(stores)
-
-    list=[]
-
-    for i in range(0,len(stores)):
-        # print([stores['상점명'][i],stores['길찾기'][i],stores['대분류'][i]])
-        c_list = stores['대분류'][i].split(',')
-        # print(c_list)
-        category = json.dumps(c_list)
-        list.append([stores['상점명'][i],stores['길찾기'][i],stores['lati'][i],stores['longi'][i],category])
-
-    for refillstation in list:
-        if Store.objects.filter(name=refillstation[0]):
-                print("이미존재")
-        else:
-            store = Store()
-            print("save>>>>>>>>>>>>>>>",refillstation)
-            store.name  = refillstation[0]
-            store.site =  refillstation[1]
-            store.latitude = refillstation[2]
-            store.longitude = refillstation[3]
-            store.category = refillstation[4]
-            # store.category = refillstation[5]
-            # store.save()
 
     return render(request,'store.html')
 
@@ -49,37 +21,46 @@ def map(request):
 
         keyword = request.POST['keyword']
         check = request.POST['radiocheck']
+        print(check)
+
+        res_data=[]
+        res_data2=[]
+        stores = Store.objects.all()
 
         # 1. 사용자가 check한 카테고리를 필터링. => 식품 화장품 생활용품중 하나
-        if check:
-            input = check
-            res_data=[]
-            stores = Store.objects.all()
-            print("all:=============> ",stores)
-            jsonDec = json.decoder.JSONDecoder()
+        if not check=="null":
             for store in stores:
-                category = jsonDec.decode(store.category)
-                print(category)
-                if input in category:
+                category = json.loads(store.category)
+                if check in category:
                     if store in stores:
-                        print("=================store:",store)
                         res_data.append(store)
-                        # print(res_data)
-
-        # 2. 사용자가 입력한 값으로 필터링 -> 세부필터링( 주 카테고리 중에서 keyword에 해당하는 것만 출력)
-        # 이때, 세부카테고리를 아직 정하지 않았기에 name으로 filtering
-        if keyword:
-            input2 = keyword #서브카테고리 키워드
-            filter_stores = Store.objects.filter(name__contains = input2)
-            # jsonDec = json.decoder.JSONDecoder()
+        elif keyword:
+            filter_stores = Store.objects.filter(name__contains = keyword)
             for store in filter_stores:
-                # sub_category = jsonDec.decode(store.sub_category)
-                res_data.append(store)
-                print(res_data)
-        #서브카테고리 데이터 추가 필요.
+                res_data2.append(store)
+        else:
+            # filter를 사용하지 않았을때 모두 나오게끔한다
+            all_stores = Store.objects.all()
+            stores_js = serializers.serialize("json", all_stores)
+            return render(request,'store.html',{'res_data' : stores_js})
+
+        res_data3=[]
+
+        if res_data and res_data2:
+
+            for i in res_data:
+                for j in res_data2:
+                    if i==j:
+                        res_data3.append(i)
+                        print(i)
+        elif res_data:
+            res_data3 = res_data
+        else:
+            res_data3 = res_data2
+
         
-        stores_js = serializers.serialize("json", res_data)
-        print(stores_js)
+        stores_js = serializers.serialize("json", res_data3)
+        
 
         return render(request,'store.html',{'res_data' : stores_js})
     else:
