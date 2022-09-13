@@ -45,26 +45,29 @@ body{
   }
   
   /* 단골상점 , 상품후기 , 적립금 박스 */
-  .summaryContainer{
+  .currentpoint{
     background-color: white;  
     display: flex;  
     padding: 21px 16px;  
-    height: 90px;
+    height: 130px;
     margin-bottom: 10px;
+    text-align: center;
   }
   /* 단골상점 , 상품후기 , 적립금 */
-  .summaryContainer .item{
+  .currentpoint .item{
     flex-grow: 1;
     text-align: center;
   }
   /* 녹색 숫자 */
-  .summaryContainer .number{
+  .currentpoint .number{
     font-size: 19px;
     font-weight: bold;
+    margin-top: 3px;
     color: #24855b;
+    text-align: center;
   }
   /* 텍스트 */
-  .summaryContainer .item > div:nth-child(2){
+  .currentpoint .item > div:nth-child(2){
     font-size: 13px;
   }
   
@@ -125,18 +128,22 @@ body{
     padding: 16px;
     color: black;
     text-decoration: none;  
-    height: 56px;
+    height: 70px;
     box-sizing: border-box;
   }
   .listContainer .icon{  
     margin-right: 14px;
+    font-size: 12px;
   }
   .listContainer .text{
-    font-size: 16px;
+    font-size: 17px;
     position: relative;
+    color: rgb(3, 201, 3);
+    font-weight: bold;
   }
   .listContainer .right{
     margin-left: auto;
+    opacity: 50%;
   }
   
   

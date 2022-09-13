@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href='{% static "css/style.css" %}?after'>
+    <link rel="stylesheet" href='{% static "css/wallet.css" %}?after'>
+    <link rel="icon" type="image/x-icon" href='{% static "assets/favicon.ico" %}' />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrap">
+        <div class="greenContainer">
+          <div>
+            <div style="width:50px; height:40px; float: left; margin-right:10px;">
+                <img src='{% static "img/sample/avatar/avatar1.jpg" %}' alt="image" width="50" height="50" class="imaged rounded">
+            </div>
+            <div style="width:80px; height:40px; float: left; margin-top: 15px;" class="name">이윤표님</div>
+          </div>    
+          <div class="modify">i</div>    
+        </div>
+        <div class="currentpoint">
+            <div class="item">
+                <div>현재 포인트</div>
+                <ion-icon name="wallet-outline"></ion-icon>
+                <div class="number">2100 원</div>
+            </div>
+        </div>
+    </div>
+    <div class="listContainer" style="word-break:break-all;">
+        <a href="#" class="item">
+            <div class="icon">구매완료 구매적립금 적립</br>
+                <div class="text">+500P</div>
+            </div>
+            <div class="right">2022.09.14</div>
+        </a>
+    </div>
+    <div class="listContainer">
+        <a href="#" class="item">
+            <div class="icon">출석이벤트 적립</br>
+                <div class="text">+100P</div>
+            </div>
+            <div class="right">2022.09.10</div>
+        </a>
+    </div>
+    <div class="listContainer">
+        <a href="#" class="item">
+            <div class="icon">방문인증 적립금 적립</br>
+                <div class="text">+1000P</div>
+            </div>
+            <div class="right">2022.09.08</div>
+        </a>
+    </div>
+    <div class="listContainer">
+        <a href="#" class="item">
+          <div class="icon">상품 구입시 적립금 결제 사용</br>
+            <div class="text" style="color: red;">-1000P</div>
+          </div>
+          <div class="right">2022.09.03</div>
+      </a>
+    </div>
+    <div class="listContainer">
+      <a href="#" class="item">
+          <div class="icon">리뷰 검수 통과 정립금</br>
+            <div class="text">+500P</div>
+          </div>
+          <div class="right">2022.09.01</div>
+      </a>
+    </div>
+    <div class="listContainer" style="word-break:break-all;">
+        <a href="#" class="item">
+            <div class="icon">구매완료 구매적립금 적립</br>
+                <div class="text">+500P</div>
+            </div>
+            <div class="right">2022.08.31</div>
+        </a>
+    </div>
+    <div class="listContainer">
+        <a href="#" class="item">
+          <div class="icon">상품 구입시 적립금 결제 사용</br>
+            <div class="text" style="color: red;">-1500P</div>
+          </div>
+          <div class="right">2022.08.22</div>
+      </a>
+    </div>
+    <div class="listContainer">
+        <a href="#" class="item">
+            <div class="icon">방문인증 적립금 적립</br>
+                <div class="text">+2000P</div>
+            </div>
+            <div class="right">2022.08.15</div>
+        </a>
+    </div>
+    <div style="margin-bottom: 10%;">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="{% url 'Home:about' %}">뒤로가기</a >
+            </li>
+        </ul>
+    </div>
+        <!-- app footer -->
+        <div class="appFooter">
+            <img src='{% static "img/logo1.png" %}' alt="icon" class="footer-logo">
+            <div class="footer-title">
+                Copyright © RefillStation <span class="yearNow"></span>. All Rights Reserved.
+            </div>
+            <div>Mobilekit is PWA ready Mobile UI Kit Template.</div>
+            Great way to start your mobile websites and pwa projects.
+
+            <div class="mt-2">
+                <a href="#" class="btn btn-icon btn-sm btn-facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-twitter">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-linkedin">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-instagram">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-whatsapp">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-secondary goTop">
+                    <ion-icon name="arrow-up-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+        <!-- * app footer -->
+    </div>
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="{% url 'Home:main' %}" class="item active">
+            <div class="col">
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="{% url 'Map:store' %}" class="item">
+            <div class="col">
+                <ion-icon name="map-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="{% url 'Home:about' %}" class="item">
+            <div class="col">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+                <span class="badge badge-danger">5</span>
+            </div>
+        </a>
+        <a href="{% url 'Item:store' %}" class="item">
+            <div class="col">
+                <ion-icon name="leaf-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="{% url 'Home:about' %}" class="item">
+            <div class="col">
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+        <!-- Ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
+    

@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#000000">
   <link rel="stylesheet" href='{% static "css/style.css" %}?after'>
-  <link rel="stylesheet" href='{% static "css/shopcss.css" %}?after'>
+  <link rel="stylesheet" href='{% static "css/shopcss.css" %}'>
   <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 </head>
@@ -56,7 +56,7 @@
 
         <div class="filter-bar">
             <a class="filter-dropdown"><i class="fa fa-filter" aria-hidden="true"></i><span class="filter-dropdown-text">Filter</span> </a>
-            <a class="filter filter-hidden">정렬 <span class="operator">=</span> 인기순, 배달 가능 </a><a class="filter-remove filter-hidden">&times;</a>
+            <a class="filter filter-hidden">정렬 <span class="operator">=</span> 최신순, 배달 가능 </a><a class="filter-remove filter-hidden">&times;</a>
             </a>
         </div>
     
@@ -65,7 +65,6 @@
             
             <div class="edit-filter-modal hidden">
                 <select name="filter1">
-                <option  value="popular">인기순</option>
                 <option value="latest">최신순</option>
                 <option value="price_high">높은 가격순</option>
                 <option  value="price_low">낮은 가격순</option>
@@ -90,7 +89,7 @@
                         {{data.name}}
                     </div>
                     <div class="product-price">
-                        {{data.price}}
+                        {{data.price}} won
                     </div>
                 </a>
             {% endfor %}

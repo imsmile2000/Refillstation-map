@@ -13,6 +13,14 @@ def store(request):
 
     return render(request,'store.html')
 
+def wallet(request):
+
+    return render(request,'wallet.html')
+
+def visit(request):
+
+    return render(request,'visit.html')
+
 def components(request):
 
     return render(request,'app-components.html')

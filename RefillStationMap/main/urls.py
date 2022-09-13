@@ -6,6 +6,8 @@ app_name = 'Home'
 urlpatterns = [
     path('',views.index,name='main'),
     path('about',views.about,name='about'),
+    path('wallet',views.wallet,name='wallet'),
+    path('visit',views.visit,name='visit'),
     path('store',views.store,name='store'),
     path('app-components',views.components,name='Map')
 
