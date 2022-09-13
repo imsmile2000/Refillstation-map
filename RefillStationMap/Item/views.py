@@ -15,7 +15,6 @@ def item(request):
 
     items = Item.objects.all()
 
-
     page = int(request.GET.get("p", 1))
     pagenator = Paginator(items, 6)
     res_data["result_board"] = pagenator.get_page(page)
@@ -33,15 +32,52 @@ def item(request):
 
     if request.method == "POST":
 
-        price = request.POST['price']
+        filter1 = request.POST['filter1']
+        filter2 = request.POST['filter2']
+        filter3 = request.POST['filter3']
+        
+        #filter1
+        price_low_filter = items.order_by('price')
+        price_high_filter = items.order_by('-price')
 
-        #filter추가예정
-        filterd_items = items.order_by('-price')
-
-        if price==True:
-            pagenator = Paginator(filterd_items, 6)
+        if filter1=="price_low":
+            pagenator = Paginator(price_low_filter, 6)
             res_data["result_board"] = pagenator.get_page(page)
+            return render(request,'item/products.html',res_data)
+        if filter1=="price_high":
+            pagenator = Paginator(price_high_filter, 6)
+            res_data["result_board"] = pagenator.get_page(page)
+            return render(request,'item/products.html',res_data)
+        if filter1=="popular":
+            pagenator = Paginator(price_low_filter, 6)
+            res_data["result_board"] = pagenator.get_page(page)
+            return render(request,'item/products.html',res_data)
+        if filter1=="latest":
+            pagenator = Paginator(price_low_filter, 6)
+            res_data["result_board"] = pagenator.get_page(page)
+            return render(request,'item/products.html',res_data)
 
+        #filter2
+        if filter1=="delivery_false":
+            pagenator = Paginator(price_low_filter, 6)
+            res_data["result_board"] = pagenator.get_page(page)
+            return render(request,'item/products.html',res_data)
+        if filter1=="delivery_true":
+            pagenator = Paginator(price_low_filter, 6)
+            res_data["result_board"] = pagenator.get_page(page)
+            return render(request,'item/products.html',res_data)
+
+        #filter3
+        if filter3!="":
+            pagenator = Paginator(price_low_filter, 6)
+            res_data["result_board"] = pagenator.get_page(page)
+            return render(request,'item/products.html',res_data)
+
+
+
+    
         return render(request,'item/products.html',res_data)
+
+        
 
     return render(request,'item/products.html',res_data)
