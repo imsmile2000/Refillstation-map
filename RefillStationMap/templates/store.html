@@ -14,6 +14,17 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"/>
+    <style>
+        .overlay_info {border-radius: 6px; margin-bottom: 12px; float:left;position: relative; border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}
+        .overlay_info:nth-of-type(n) {border:0; box-shadow: 0px 1px 2px #888;}
+        .overlay_info a {display: block; background: #24855b; background: #24855b no-repeat right 14px center; text-decoration: none; color: #fff; padding:12px 36px 12px 14px; font-size: 14px; border-radius: 6px 6px 0 0}
+        .overlay_info button {display: inline; background: #24855b; background: #24855b url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat; border-radius: 30px 3px; }
+        .overlay_info a strong {background: no-repeat; padding-left: 27px;}
+        .overlay_info .desc {padding:14px;position: relative; min-width: 300px; height: 100px; margin-bottom: 5%;}
+        .overlay_info img {vertical-align: top;}
+        .overlay_info .address {font-size: 12px; color: #333; position: absolute; left: 80px; right: 14px; top: 24px; white-space: normal}
+        .overlay_info:after {content:'';position: absolute; margin-left: -11px; left: 50%; bottom: -12px; width: 22px; height: 12px; background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png) no-repeat 0 bottom;}
+    </style>
 </head>
 <body>
     <!-- App Header -->
@@ -34,7 +45,7 @@
     </div>
     <!-- * App Header -->
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" >
             <div class="container">
                 <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="{% url 'Home:main' %}">RefillStation Map</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -48,7 +59,10 @@
                 </div>
             </div>
         </nav>
+        
         <section class="page-section cta">
+          
+
             <div class="map_wrap" style="overflow:hidden;height:800px">
                 <div id="mapWrapper" style="width:100%;height:400px;float:left">
                     <div id="map" style="width:90%;height:100%; margin-left: 5%; margin-right: 5%; margin-top: 5%;"></div>
@@ -316,68 +330,70 @@
                 const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
                 const options = { //지도를 생성할 때 필요한 기본 옵션
                     center: new kakao.maps.LatLng(lati, longi), //지도의 중심좌표 => 사용자의 위치로 설정예정.
-                    level: 5 //지도의 레벨(확대, 축소 정도)
+                    level: 3 //지도의 레벨(확대, 축소 정도)
                 };
                 const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+                const marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        position: new kakao.maps.LatLng(lati, longi), // 마커의 위치
+                });
+
+                    
                 // 마커가 표시될 위치입니다 
 
                 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열예시
                 const data = JSON.parse("{{ res_data|escapejs }}");
                 console.log(data);
-                const position = []
-                let p=0;
-                for(p; p<data.length; p++)
+                const position2 = []
+                let p_=0;
+
+                for(p_; p_<(data.length/2); p_++)
                 {
+                    const content_temp = `
+                    <div class="overlay_info">
+                    <a href="${data[p_]['fields'].site}" target="_blank"><strong>${data[p_]['fields'].name}</strong></a>
+                    <div class="desc">
+                    <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/place_thumb.png" alt="">
+                    <span class="address"> 찾아가서 인증하면? 쑥쑥크는 포인트나무 500p! <br> <button onclick = "location.href = '${data[p_]['fields'].site}'" target="_blank">사이트가기</button></span>
+                    </div>
+                    </div>`;
                     const new_p = {
-                    content: `<div>${data[p]['fields'].name}</div>`,
-                    latlng: new kakao.maps.LatLng(data[p]['fields'].latitude,data[p]['fields'].longitude),
-                    site: data[p]['fields'].site}
-                    position.push(new_p);
+                    content: content_temp,
+                    latlng: new kakao.maps.LatLng(data[p_]['fields'].latitude,data[p_]['fields'].longitude)}
+                    position2.push(new_p);
                 }
 
-                //position django backend에서 json으로 리필스테이션 위도, 경도, 소개사이트 혹은 웹사이트, content를 넘겨받아서 위와같이 처리하는 코드를 작성(예정)
-
-                let i=0;
-                for (i; i < position.length; i ++) {
-                    // 마커를 생성합니다
-                    const marker = new kakao.maps.Marker({
-                        map: map, // 마커를 표시할 지도
-                        position: position[i].latlng, // 마커의 위치
+                for(p_ = data.length/2; p_<data.length; p_++)
+                {
+                    const content_temp = `
+                    <div class="overlay_info">
+                    <a href="${data[p_]['fields'].site}" target="_blank"><strong>${data[p_]['fields'].name}</strong></a>
+                    <div class="desc">
+                    <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/place_thumb.png" alt="">
+                    <span class="address"> 찾아가서 인증하면? 쑥쑥크는 포인트나무 250p! <br> <button onclick = "location.href = '${data[p_]['fields'].site}'" target="_blank">사이트가기</button> <button onclick = "location.href = '${data[p_]['fields'].site}'" target="_blank">에약하기</button></span>
+                    </div>
+                    </div>`;
+                    const new_p = {
+                    content: content_temp,
+                    latlng: new kakao.maps.LatLng(data[p_]['fields'].latitude,data[p_]['fields'].longitude)}
+                    position2.push(new_p);
+                }
+             
+                for (let i=0; i < position2.length; i ++) {
+                    //  커스텀 오버레이를 생성합니다
+                    var mapCustomOverlay = new kakao.maps.CustomOverlay({
+                        position: position2[i].latlng,
+                        content: position2[i].content,
+                        xAnchor: 0.5, // 커스텀 오버레이의 x축 위치입니다. 1에 가까울수록 왼쪽에 위치합니다. 기본값은 0.5 입니다
+                        yAnchor: 0.5 // 커스텀 오버레이의 y축 위치입니다. 1에 가까울수록 위쪽에 위치합니다. 기본값은 0.5 입니다
                     });
 
-                    // 마커에 표시할 인포윈도우를 생성합니다 
-                    const infowindow = new kakao.maps.InfoWindow({
-                        content: position[i].content // 인포윈도우에 표시할 내용
-                    });
-
-                    // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
-                    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-                    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-                    //마커 클릭시 링크를 타고 넘어가도록 onclick 이벤트를 등록합니다
-                    kakao.maps.event.addListener(marker, 'click', onClickListener(position[i].site));
+                   // 커스텀 오버레이를 지도에 표시합니다
+                   mapCustomOverlay.setMap(map);
                 }
 
-                // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
-                function makeOverListener(map, marker, infowindow) {
-                    return function() {
-                        infowindow.open(map, marker);
-                    };
-                }
-
-                // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
-                function makeOutListener(infowindow) {
-                    return function() {
-                        infowindow.close();
-                    };
-                }
-
-                //onclick listener
-                function onClickListener(link) {
-                    return function() {
-                        // 등록한 웹페이지 혹은 블로그 주소를 링크로 넣습니다
-                        window.open(link);
-                    };
-                }
+                
             }
 
 
@@ -393,5 +409,6 @@
 
             navigator.geolocation.getCurrentPosition(okay,error);           
         </script>
+        
 </body>
 </html>
