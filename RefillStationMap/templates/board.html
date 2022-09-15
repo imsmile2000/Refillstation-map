@@ -146,32 +146,37 @@
           </div>
       
       </section>
-    <!-- App Bottom Menu -->
-    <div class="appBottomMenu">
-        <a href="{% url 'Home:main' %}" class="item active">
+     <!-- App Bottom Menu -->
+     <div class="appBottomMenu">
+        <a href="{% url 'Home:main' %}" class="item active">  
             <div class="col">
-                <ion-icon name="home-outline"></ion-icon>
+                <!-- <ion-icon name="home-outline"></ion-icon> -->
+                <img src='{% static "img/home.png" %}' style="width: 50px;">
             </div>
         </a>
         <a href="{% url 'Map:store' %}" class="item">
             <div class="col">
-                <ion-icon name="map-outline"></ion-icon>
+                <!-- <ion-icon name="map-outline"></ion-icon> -->
+                <img src='{% static "img/map.png" %}' style="width: 50px;">
             </div>
         </a>
         <a href="{% url 'Home:board' %}" class="item">
             <div class="col">
-                <ion-icon name="chatbubbles-outline"></ion-icon>
+                <!-- <ion-icon name="chatbubble-ellipses-outline"></ion-icon> -->
+                <img src='{% static "img/chat.png" %}' style="width: 50px;">
                 <span class="badge badge-danger">5</span>
             </div>
         </a>
         <a href="{% url 'Item:store' %}" class="item">
             <div class="col">
-                <ion-icon name="leaf-outline"></ion-icon>
+                <!-- <ion-icon name="leaf-outline"></ion-icon> -->
+                <img src='{% static "img/product.png" %}' style="width: 50px;">
             </div>
         </a>
         <a href="{% url 'Home:about' %}" class="item">
             <div class="col">
-                <ion-icon name="person-outline"></ion-icon>
+                <!-- <ion-icon name="person-outline"></ion-icon> -->
+                <img src='{% static "img/mypage.png" %}' style="width: 50px;">
             </div>
         </a>
     </div>
