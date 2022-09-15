@@ -8,6 +8,7 @@ urlpatterns = [
     path('about',views.about,name='about'),
     path('wallet',views.wallet,name='wallet'),
     path('visit',views.visit,name='visit'),
+    path('board',views.board,name='board'),
     path('store',views.store,name='store'),
     path('app-components',views.components,name='Map')
 

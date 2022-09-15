@@ -21,6 +21,10 @@ def visit(request):
 
     return render(request,'visit.html')
 
+def board(request):
+
+    return render(request,'board.html')
+
 def components(request):
 
     return render(request,'app-components.html')

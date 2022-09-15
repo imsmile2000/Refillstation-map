@@ -1,19 +1,18 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#000000">
-  <link rel="stylesheet" href='{% static "css/style.css" %}?after'>
-  <link rel="stylesheet" href='{% static "css/shopcss.css" %}'>
-  <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-</head>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="stylesheet" href='{% static "css/style.css" %}?after'>
+    <link rel="stylesheet" href='{% static "css/board.css" %}?after'>
+    
+</head>
 <body>
     <!-- App Header -->
     <div class="appHeader bg-primary scrolled">
@@ -47,135 +46,106 @@
             </div>
         </form>
     </div>
-    <!-- * Search Component -->
-    <div class="hero-header"></div>
-    <div class="products">
-        
-        <h3>Our Products</h3>
-        <div class="config-panel"></div>
-
-        <div class="filter-bar">
-            <a class="filter-dropdown"><i class="fa fa-filter" aria-hidden="true"></i><span class="filter-dropdown-text">Filter</span> </a>
-            <a class="filter filter-hidden">정렬 <span class="operator">=</span> 최신순, 배달 가능 </a><a class="filter-remove filter-hidden">&times;</a>
-            </a>
-        </div>
-    
-        <form action="{% url 'Item:store' %}" method="POST">
-            {% csrf_token %}
-            
-            <div class="edit-filter-modal hidden">
-                <select name="filter1">
-                <option value="latest">최신순</option>
-                <option value="price_high">높은 가격순</option>
-                <option  value="price_low">낮은 가격순</option>
-                </select>
-                <select name="filter2">
-                <option  value="delivery_true">배달 가능</option>
-                <option value="delivery_false">배달 불가능</option>
-                </select>
-                <input type="text" placeholder="매장 입력" name="filter3">
-                <button class="apply-button" type="submit" >Apply</button><button class="text-button">Cancel</button>
-            </div>
-
-        </form>
-        
-
-        <div class="product-list">
-
-            {% for data in result_board %}
-                <a href="{{data.detail}}" class="product">
-                    <img src="{{data.image}}" width="250">
-                    <div class="product-name"> 
-                        {{data.name}}
-                    </div>
-                    <div class="product-price">
-                        {{data.price}} won
-                    </div>
-                </a>
-            {% endfor %}
-
-
-            <div class="clearfix"></div>
-        </div>
+    <section class="notice">
+        <div class="page-title">
+              <div class="container">
+                  <h3>커뮤니티</h3>
+              </div>
+          </div>
       
-    </div>
-    <div class="footer">
-      <a href="http://facebook.com">
-        <img src="https://bakey.codeit.kr/files/629/images/facebook.png" height="20">
-      </a>
-       <a href="http://instagram.com">
-        <img src="https://bakey.codeit.kr/files/629/images/instagram.png" height="20">
-      </a>
-       <a href="http://twitter.com">
-        <img src="https://bakey.codeit.kr/files/629/images/twitter.png" height="20">
-      </a>
-            
-    </div>
-    </body>
+          <!-- board seach area -->
+          <div id="board-search">
+              <div class="container">
+                  <div class="search-window">
+                      <form action="">
+                          <div class="search-wrap">
+                              <label for="search" class="blind">공지사항 내용 검색</label>
+                              <input id="search1" type="search" name="" placeholder="검색어를 입력해주세요." value="">
+                              <button type="submit" class="btn btn-dark1">검색</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+         
+        <!-- board list area -->
+          <div id="board-list">
+              <div class="container">
+                  <table class="board-table">
+                      <thead>
+                      <tr>
+                          <th scope="col" class="th-num">번호</th>
+                          <th scope="col" class="th-title">제목</th>
+                          <th scope="col" class="th-writer">작성자</th>
+                          <th scope="col" class="th-date">등록일</th>
+                          <th scope="col" class="th-view">조회수</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>8</td>
+                          <th>[공지사항] 커뮤니티 사용시 주의사항 및 개인정보 처리방침</th>
+                          <td>관리자</td>
+                          <td>2022.08.24</td>
+                          <td>214</td>
+                      </tr>
       
-</html>
-
-        <div style="margin-bottom: 10%;">
-            <ul class="pagination justify-content-center">
-                {% if result_board.has_previous %}
-                <li class="page-item">
-                  <a class="page-link" href="?p={{ result_board.previous_page_number }}">Previous</a >
-                </li>
-                {% else %}
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">Previous</a>
-                </li>
-                {% endif %}
-                <li class="page-item">
-                  <a class="page-link" href="#"
-                    >{{ result_board.number }} / {{ result_board.paginator.num_pages }}</a
-                  >
-                </li>
-                {% if result_board.has_next %}
-                <li class="page-item">
-                  <a class="page-link" href="?p={{ result_board.next_page_number }}">Next</a>
-                </li>
-                {% else %}
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-                {% endif %}
-            </ul>
-        </div>
-
-        <!-- app footer -->
-        <div class="appFooter">
-            <img src='{% static "img/logo1.png" %}' alt="icon" class="footer-logo">
-            <div class="footer-title">
-                Copyright © RefillStation <span class="yearNow"></span>. All Rights Reserved.
-            </div>
-            <div>Mobilekit is PWA ready Mobile UI Kit Template.</div>
-            Great way to start your mobile websites and pwa projects.
-
-            <div class="mt-2">
-                <a href="#" class="btn btn-icon btn-sm btn-facebook">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-                <a href="#" class="btn btn-icon btn-sm btn-twitter">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                </a>
-                <a href="#" class="btn btn-icon btn-sm btn-linkedin">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-                <a href="#" class="btn btn-icon btn-sm btn-instagram">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <a href="#" class="btn btn-icon btn-sm btn-whatsapp">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                </a>
-                <a href="#" class="btn btn-icon btn-sm btn-secondary goTop">
-                    <ion-icon name="arrow-up-outline"></ion-icon>
-                </a>
-            </div>
-
-        </div>
-        <!-- * app footer -->
-    </div>
+                      <tr>
+                          <td>7</td>
+                          <th>리필스테이션 동그라미리필러리 가격 문의</th>
+                          <td>수지니</td>
+                          <td>2022.09.15</td>
+                          <td>13</td>
+                      </tr>
+      
+                      <tr>
+                          <td>6</td>
+                          <th>저번주에 성남에 있는 '지구랑 가게' 다녀왔어요~</th>
+                          <td>뽀미</td>
+                          <td>2022.09.14</td>
+                          <td>21</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <th>부산 심플리파이심플리파이에서 샴푸 리필했는데 너무 좋아요!</th>
+                        <td>리필사랑</td>
+                        <td>2022.09.13</td>
+                        <td>33</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <th>샵에서 주방세제 구매했는데 양이 너무 많아요ㅜㅜ나눔합니다~</th>
+                        <td>졸린곰</td>
+                        <td>2022.09.10</td>
+                        <td>50</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <th>저랑 공동구매 하실 분 있으신가요?</th>
+                        <td>아기코끼리</td>
+                        <td>2022.09.09</td>
+                        <td>12</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <th>[자랑글] 지금까지 구매한 리필 제품들 인증합니다!</th>
+                        <td>아나바다</td>
+                        <td>2022.09.07</td>
+                        <td>77</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <th>리필스테이션 사용한 이후로 돈을 많이 절약했어요</th>
+                        <td>리필조아</td>
+                        <td>2022.09.03</td>
+                        <td>89</td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      
+      </section>
     <!-- App Bottom Menu -->
     <div class="appBottomMenu">
         <a href="{% url 'Home:main' %}" class="item active">
@@ -205,7 +175,6 @@
             </div>
         </a>
     </div>
-    <!-- * App Bottom Menu -->
     <!-- App Sidebar -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarPanel">
         <div class="offcanvas-body">
@@ -226,6 +195,7 @@
                 </a>
             </div>
             <!-- * profile box -->
+
             <ul class="listview flush transparent no-line image-listview mt-2">
                 <li>
                     <a href="{% url 'Home:main' %}" class="item">
@@ -303,6 +273,7 @@
                 <li>
                     <a href="page-chat.html" class="item">
                         <img src='{% static "img/sample/avatar/avatar.jpg" %}' alt="image" class="image">
+
                         <div class="in">
                             <div>동그라미리필러리</div>
                         </div>
@@ -311,6 +282,7 @@
                 <li>
                     <a href="page-chat.html" class="item">
                         <img src='{% static "img/sample/avatar/avatar.jpg" %}' alt="image" class="image">
+
                         <div class="in">
                             <div>보틀라운지</div>
                         </div>
@@ -345,6 +317,40 @@
     </div>
     <!-- * App Sidebar -->
 
+        <!-- app footer -->
+        <div class="appFooter">
+            <img src='{% static "img/logo1.png" %}' alt="icon" class="footer-logo">
+            <div class="footer-title">
+                Copyright © RefillStation <span class="yearNow"></span>. All Rights Reserved.
+            </div>
+            <div>Mobilekit is PWA ready Mobile UI Kit Template.</div>
+            Great way to start your mobile websites and pwa projects.
+
+            <div class="mt-2">
+                <a href="#" class="btn btn-icon btn-sm btn-facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-twitter">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-linkedin">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-instagram">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-whatsapp">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-secondary goTop">
+                    <ion-icon name="arrow-up-outline"></ion-icon>
+                </a>
+            </div>
+
+        </div>
+        <!-- * app footer -->
+
+    <!-- * App Bottom Menu -->
     <!-- ============== Js Files ==============  -->
     <!-- Bootstrap -->
     <script src='{% static "js/lib/bootstrap.min.js" %}'></script>
@@ -356,36 +362,5 @@
     <script src='{% static "js/plugins/progressbar-js/progressbar.min.js" %}'></script>
     <!-- Base Js File -->
     <script src='{% static "js/base.js" %}'></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script> 
-    <script>
-        $(document).ready(function(){
-            $(".filter-dropdown, .text-button").click(function(){
-                $(".edit-filter-modal").toggleClass("hidden");
-        });
-            $(".apply-button").click(function(){
-            $(".edit-filter-modal").toggleClass("hidden");
-                $(".filter, .filter-remove, .fa-plus, .fa-filter").toggleClass("filter-hidden");
-            $(".filter-dropdown-text").text("Add filter");
-            
-            
-            });
-            
-            $(".filter-remove").click(function(){
-                $(".filter, .filter-remove, .fa-plus, .fa-filter").toggleClass("filter-hidden");
-                $(".filter-dropdown-text").text("Filter dataset");
-            });
-            
-            $("select[name=filter1]").change(function () {
-            console.log($('select[name=filter1]').val());
-            filter1_val = $('select[name=filter1]').val();
-            $('.form').submit(filter1_val);});
-
-            $("select[name=filter2]").change(function () {
-            console.log($('select[name=filter2]').val());
-            filter2_val = $('select[name=filter2]').val();
-            $('.form').submit(filter2_val);});
-        
-        });
-    </script>
 </body>
 </html>
